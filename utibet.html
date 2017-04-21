@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西藏大学</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/stlStyle.css">
+    <!--JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/stlLoader.js"></script>
+    <!--图片轮播-->
+    <style>
+        #frame{position:absolute;width:1100px;height:600px;overflow:hidden;border-radius:5px;margin-left:15%;}
+        #dis{position:absolute;left:-50px;top:-10px;opacity:.5}
+        #photos img{float:left;width:1100px;height:600px}
+        #photos {  position: absolute;z-index:9;  width: calc(1100px * 4);/*---修改图片数量的话需要修改下面的动画参数*/  }
+        .play{ animation: ma 15s ease-out infinite alternate;}
+        @keyframes ma {
+            0%,25% {        margin-left: 0px;       }
+            30%,50% {       margin-left: -1100px;    }
+            55%,75% {       margin-left: -2200px;    }
+            80%,100% {       margin-left: -3300px;    }
+        }
+    </style>
+    <!--图片轮播-->
+</head>
+
+<body>
+<!--主页-->
+<section class="banner" role="banner" id="banner">
+    <!--导航-->
+    <header style="background:rgba(0,0,0,0.7)" id="header" class="myHeader">
+        <div class="header-content clearfix">
+            <span class="logo"><a href="utibet.html">Utibet</a></span>
+            <nav class="navigation" role="navigation">
+                <ul class="primary-nav">
+                    <li><a href="#banner">主页</a></li>
+                    <li><a href="#intro">简介</a>
+                    </li><li><a href="#gallery">图集</a></li>
+                    <li><a href="#3d">3D模型</a></li>
+                    <li><a href="#about">关于</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="nav-toggle">菜单<span></span></a> </div>
+    </header>
+    <!--导航-->
+    <script>
+        //页头滚动
+        $(document).ready(function(){
+            $(window).on('scroll', function() {
+                var scroll = $(window).scrollTop();
+                if (scroll >= 50) {
+                    $('#header').addClass('fixed');
+
+                } else {
+                    $('#header').removeClass('fixed');
+                }
+            });
+        });
+    </script>
+
+    <!--主页文字-->
+    <div class="container">
+        <div class="col-md-10">
+            <div class="banner-text text-center">
+                <!--style="color:darkslategray;"-->
+                <h1>西藏大学图书馆</h1>
+                <p>与君初相识 犹如故人归。</p>
+            </div>
+        </div>
+    </div>
+    <!--主页文字-->
+</section>
+<!--主页-->
+
+<!--简介-->
+<section id="intro" class="section intro">
+    <div class="container">
+        <div class="section-header">
+            <h2>图书馆简介</h2>
+            <p>“ 万千学子，藏大情深。”</p>
+            <p> 基于综合性大学的特点，长期以来坚持按照“藏汉文并重、以藏学为特色、多学科全面建设”的原则均衡发展，经过六十余年的持续建设，<br>
+                目前校本部新、老校区两个分馆纸质文献藏书总量达109.39万余册，其中，藏文图书3万余册，藏文木刻本2456函，汉文图书103万<br>
+                册，汉文再版古籍1.6万册，西文图书0.5万余册，报刊合订本1.9万余册，馆藏光盘1万余张，建设了基于馆藏文献的“中国藏文文献<br>
+                资源网”，本地存储电子图书、学术论文、教学资源等各类镜像数据近30TB，馆藏规模和质量居于自治区首位，此外，2007年还特别<br>
+                收藏了西藏日喀则聂拉木县菩日村2002年农田改造时出土的自新中国成立以来我国境内出土年代最久远、藏量最多的1000多年前吐蕃<br>
+                时期藏文写本“菩日文献”，其中，十世纪写本《大般若波罗蜜多经》和十世纪写本《大般若波罗蜜多经两万五千颂》先后于2010、<br>
+                2016年入选第三批、第五批《国家珍贵古籍名录》，成为镇馆之宝。另有中国国家图书馆指定收藏的《中华再造善本》一套。</p>
+        </div>
+    </div>
+</section>
+<!--简介-->
+
+<!--图集-->
+<section id="gallery" class="gallery section">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>图集</h2>
+        </div>
+        <!--图集滚动-->
+        <div id="frame">
+            <div id="photos" class="play">
+                <img src="images/01.jpg" >
+                <img src="images/02.jpg" >
+                <img src="images/03.jpg" >
+                <img src="images/04.jpg" >
+            </div>
+        </div>
+        <!--图集滚动-->
+</section>
+<!--图集-->
+
+
+
+<!--3D模型-->
+<section style="background-color: black;width:100%;height:720px;" id="3d" class="3d section">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>3D模型</h2>
+            <p>请使用“左键”旋转，“滚轮”缩放，“右键”移动</p>
+        </div>
+    </div>
+    <div id="stlStyle">
+        <div class="file">
+            <div class="render-shell js-render-shell" data-color="0x4183c4" >
+
+                <!-- render bar -->
+                <div class="js-render-bar render-bar render-bar-with-modes">
+                    <ul class="js-view-modes render-view-modes">
+                        <li data-mode="wireframe" class="js-view-mode-item" >线框</li>
+                        <li data-mode="normal" class="js-view-mode-item" >面倾角</li>
+                        <li data-mode="solid" class="js-view-mode-item active">实体</li>
+                    </ul>
+                </div>
+                <!-- /render bar -->
+                <!-- 渲染窗口 -->
+                <!--stl文件导入链接-->
+                <div id="solid-viewer" class="render-viewport" data-file="http://ono4ruobb.bkt.clouddn.com/start.stl">
+                </div>
+                <!-- 渲染窗口 -->
+            </div>
+        </div>
+    </div>
+</section>
+<!--3D模型-->
+
+<!--关于-->
+<section id="about" class="about section">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>关于</h2>
+            <p>网页代码编辑软件为WebStorm<br>3D建模适用软件Cinema 4D R16<br>3D模型展示基于Three.js开源库<br>Email:funteen@qq.com<br>Copyright©2017-2018 西藏大学 杨建. All Rights Reserved</p>
+        </div>
+</section>
+<!--关于-->
+
+
+
+</body>
+</html>
+
